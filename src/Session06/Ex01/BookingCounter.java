@@ -42,6 +42,7 @@ public class BookingCounter implements Runnable{
 
     @Override
     public void run() {
-
+        while (sellCombo()){
+        }
     }
 }
