@@ -32,12 +32,11 @@ public class Ex04 {
             con = getConnection();
             stmt = con.createStatement();
 
-            String sql = "SELECT * FROM patients WHERE name = '" + input + "'";
-
+            String sql = "SELECT * FROM patients WHERE patients_name LIKE " + "'%" + input + "%'";
             rs = stmt.executeQuery(sql);
 
             while (rs.next()) {
-                System.out.println("Tên: " + rs.getString("name"));
+                System.out.println("Tên: " + rs.getString("patients_name"));
             }
 
         } catch (Exception e) {
